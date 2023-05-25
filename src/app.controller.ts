@@ -8,8 +8,8 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getIndex(){
-    return "AWS"
+  getIndex(@Res() res) {
+    res.sendFile(join(__dirname, '..', 'src', 'view', 'index.html'));
   }
 
   @Post('fileupload')
