@@ -1,14 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { MulterModule } from '@nestjs/platform-express/multer';
 import { S3Module } from 'nestjs-s3';
 
 @Module({
   imports: [
-    // MulterModule.register({
-    //   dest: './uploads',
-    // }),
     S3Module.forRoot({
       config: {
         credentials: {
